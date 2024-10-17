@@ -1,0 +1,75 @@
+{
+  "Flusher_level_bar_R2": 1,
+  "Flusher_level_bar_R1": -87,
+  "Cncip": "192.168.0.200",
+  "Cncport": "8193",
+  "Flusher_level_bar": 0.0,
+  "Excluder_level_bar": 3.0,
+  "Flusher_address": "7000",
+  "Excluder_address": "7000",
+  "Flusher_address_decimal": "0",
+  "Excluder_address_decimal": "0",
+  "Flusher_address_handl": "5",
+  "Excluder_address_handl": "5",
+  "spindle_load": 0,
+  "FlusherLevels": [
+    "20",
+    "40",
+    "60",
+    "80"
+  ],
+  "FlusherLevelsl": [
+    "21",
+    "41",
+    "61",
+    "81"
+  ],
+  "FlusherlevelSt": [
+    "0%~20%",
+    "21%~40%",
+    "41%~60%",
+    "61%~80%",
+    "81%~100%",
+    "",
+    ""
+  ],
+  "FlusherTime": [
+    "0",
+    "2",
+    "3",
+    "5",
+    "6"
+  ],
+  "ExcluderLevels": [
+    "20",
+    "40",
+    "60",
+    "80"
+  ],
+  "ExcluderLevelsl": [
+    "21",
+    "41",
+    "61",
+    "81"
+  ],
+  "ExcluderlevelSt": [
+    "0%~20%",
+    "21%~40%",
+    "41%~60%",
+    "61%~80%",
+    "81%~100%",
+    "",
+    ""
+  ],
+  "ExcluderTime": [
+    "0",
+    "10",
+    "20",
+    "30",
+    "40"
+  ],
+  "Excluder_period": "5",
+  "Image_processing_time": "10",
+  "Total_flusher_time": "6",
+  "Delay_time": "84"
+}

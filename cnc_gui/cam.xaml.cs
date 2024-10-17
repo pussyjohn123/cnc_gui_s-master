@@ -78,36 +78,22 @@ namespace cnc_gui
             timer.Start();
             Task.Run(UpdateChart);
         }
-        public void LoadImage(string filePath, Image imageControl)
+        public void LoadImage(string imagePath, Image imageControl)
         {
             try
             {
                 // 確認圖片檔案是否存在
-                if (File.Exists(filePath))
+                using (FileStream stream = new FileStream(imagePath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
                 {
-                    // 建立 BitmapImage 物件
+                    // 建立新的 BitmapImage
                     BitmapImage bitmap = new BitmapImage();
-
-                    // 開始初始化
                     bitmap.BeginInit();
-
-                    // 設定圖片來源
-                    bitmap.UriSource = new Uri(filePath, UriKind.Absolute);
-
-                    // 防止圖片被鎖定，允許快取選項
-                    bitmap.CacheOption = BitmapCacheOption.OnLoad;
-
-                    // 結束初始化
+                    bitmap.CacheOption = BitmapCacheOption.OnLoad; // 立即讀取整個圖片，避免鎖定檔案
+                    bitmap.StreamSource = stream; // 使用 FileStream 讀取圖片
                     bitmap.EndInit();
 
-                    // 將圖片設定到指定的 Image 控制項
+                    // 設定圖片源
                     imageControl.Source = bitmap;
-                }
-                else
-                {
-                    // 如果圖片不存在，顯示預設圖片
-                    imageControl.Source = new BitmapImage(new Uri("icon/no_img.png", UriKind.Relative));
-                    Console.WriteLine($"圖片不存在：{filePath}");
                 }
             }
             catch (Exception ex)

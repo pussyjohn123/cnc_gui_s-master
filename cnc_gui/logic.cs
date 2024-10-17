@@ -98,7 +98,7 @@ namespace Logic
                             }
                             DateTime endTime = DateTime.Now;
                             TimeSpan Duratiom = (endTime - startTime);
-                            int remainingTime = 30000 - (int)Duratiom.TotalMilliseconds;
+                            int remainingTime = 100000 - (int)Duratiom.TotalMilliseconds;
                             if (remainingTime > 0)
                             { 
                                 Thread.Sleep(remainingTime);

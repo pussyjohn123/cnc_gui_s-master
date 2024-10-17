@@ -111,23 +111,25 @@ namespace cnc_gui
         {
             try
             {
-                // 建立 BitmapImage 物件
-                BitmapImage bitmap = new BitmapImage();
+                // 清除目前圖片資源
+                if (source_img_home.Source != null)
+                {
+                    source_img_home.Source = null;
+                }
 
-                // 開始初始化
-                bitmap.BeginInit();
+                // 確保檔案不被鎖定，使用 FileStream
+                using (FileStream stream = new FileStream(imagePath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+                {
+                    // 建立新的 BitmapImage
+                    BitmapImage bitmap = new BitmapImage();
+                    bitmap.BeginInit();
+                    bitmap.CacheOption = BitmapCacheOption.OnLoad; // 立即讀取整個圖片，避免鎖定檔案
+                    bitmap.StreamSource = stream; // 使用 FileStream 讀取圖片
+                    bitmap.EndInit();
 
-                // 設定圖片來源
-                bitmap.UriSource = new Uri(imagePath, UriKind.Absolute);
-
-                // 防止圖片被鎖定，允許快取選項
-                bitmap.CacheOption = BitmapCacheOption.OnLoad;
-
-                // 結束初始化
-                bitmap.EndInit();
-
-                // 將圖片設定到 Image 控制項
-                source_img_home.Source = bitmap;
+                    // 設定圖片源
+                    source_img_home.Source = bitmap;
+                }
             }
             catch (Exception ex)
             {
@@ -140,11 +142,6 @@ namespace cnc_gui
 
         // 此方法用於載入設定並更新 UI
         public void Timer_Tick(object sender, EventArgs e)
-        {
-            settingsPage.LoadConfig(); // 重新載入配置
-            UpdatehomeProgressBars();      // 更新進度條
-        }
-        public  void UpdateUI()
         {
             settingsPage.LoadConfig(); // 重新載入配置
             UpdatehomeProgressBars();      // 更新進度條
