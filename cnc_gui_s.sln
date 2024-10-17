@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35219.272
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cnc_gui", "cnc_gui\cnc_gui.csproj", "{24E4B1CD-CDDC-48C3-A3B4-D408C6803112}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{24E4B1CD-CDDC-48C3-A3B4-D408C6803112}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24E4B1CD-CDDC-48C3-A3B4-D408C6803112}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24E4B1CD-CDDC-48C3-A3B4-D408C6803112}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24E4B1CD-CDDC-48C3-A3B4-D408C6803112}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B1D92926-7FB5-41FC-B8E7-175294C59DF6}
+	EndGlobalSection
+EndGlobal
